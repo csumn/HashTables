@@ -20,6 +20,19 @@ public class MyLinkedList<K> {
 		}		
 	}
 
+	public INode delete(K key) {
+		INode<K> currentNode = head;
+		INode<K> previous = null;
+		while (currentNode != null && currentNode.getNext() != null) {
+			previous = currentNode;
+			if (currentNode.getKey().equals(key)) {
+				previous.setNext(currentNode.getNext());
+			}
+			currentNode =currentNode.getNext();
+		}
+		return currentNode;		
+	}
+
 	public INode<K> search(K key) {
 		INode<K> node = head;
 		while (node != null && node.getNext() != null) {
