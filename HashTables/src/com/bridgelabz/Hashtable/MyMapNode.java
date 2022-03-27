@@ -31,13 +31,13 @@ public class MyMapNode<K, V> implements INode<K>{
 	}
 
 	@Override
-	public INode<K> getNext() {
-		return next;
+	public void setNext(INode<K> next) {
+		this.next = (MyMapNode<K,V>)next;
 	}
 
 	@Override
-	public void setNext(INode<K> next) {
-		this.next = (MyMapNode<K,V>)next;
+	public INode<K> getNext() {
+		return next;
 	}
 
 	//	@Override
